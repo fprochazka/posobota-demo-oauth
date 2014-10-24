@@ -10,14 +10,18 @@ Create sandbox
 ## Facebook
 
 - `composer require kdyby/facebook`
-- [Create new app](https://developers.facebook.com/apps/)
 - register extension
 
 ```yml
 extensions:
 	facebook: Kdyby\Facebook\DI\FacebookExtension
+
+facebook:
+	permissions: [email, public_profile]
+	graphVersion: v2.1
 ```
 
+- [Create new app](https://developers.facebook.com/apps/494469227315105/test-apps/)
 - copy credentials to config
 
 
@@ -25,7 +29,6 @@ extensions:
 facebook:
 	appId: ""
 	appSecret: ""
-	permissions: [email, public_profile]
 ```
 
 - copy [auth component usage from doc](https://github.com/Kdyby/Facebook/blob/master/docs/en/index.md#authentication)
@@ -38,5 +41,36 @@ facebook:
 - fix the [graph api version](https://github.com/fprochazka/posobota-demo-oauth/blob/master/www/images/fb-upgrade-notice.png), [revoke app from test user](https://www.facebook.com/settings?tab=applications)
 - try again
 - profit
-- show fb calls
+- show api calls
+- show identity in panel
+
+
+## Github
+
+- `composer require kdyby/github`
+- register extension
+
+```yml
+extensions:
+	github: Kdyby\Github\DI\GithubExtension
+
+github:
+	permissions: [user:email]
+```
+
+- [Create new app](https://github.com/settings/applications/new)
+- copy credentials to config
+
+```yml
+github:
+	appId: ""
+	appSecret: ""
+```
+
+- copy [auth component usage from doc](https://github.com/Kdyby/Github/blob/master/docs/en/index.md#authentication)
+- delete not needed code
+- add button to template
+- click the button
+- profit
+- show api calls
 - show identity in panel

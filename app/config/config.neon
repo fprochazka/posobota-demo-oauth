@@ -23,11 +23,16 @@ nette:
 
 extensions:
 	facebook: Kdyby\Facebook\DI\FacebookExtension
+	github: Kdyby\Github\DI\GithubExtension
 
 
 facebook:
 	graphVersion: v2.1
 	permissions: [email, public_profile]
+
+
+github:
+	permissions: [user:email]
 
 
 services:
