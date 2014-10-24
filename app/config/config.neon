@@ -27,6 +27,7 @@ extensions:
 
 facebook:
 	graphVersion: v2.1
+	permissions: [email, public_profile]
 
 
 services:
