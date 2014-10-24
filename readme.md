@@ -31,5 +31,12 @@ facebook:
 - copy [auth component usage from doc](https://github.com/Kdyby/Facebook/blob/master/docs/en/index.md#authentication)
 - delete not needed code
 - add button to template
+- click the button
+- doesnt work?
+- fix the app url
+- try again
+- fix the [graph api version](https://github.com/fprochazka/posobota-demo-oauth/blob/master/www/images/fb-upgrade-notice.png), [revoke app from test user](https://www.facebook.com/settings?tab=applications)
+- try again
 - profit
-
+- show fb calls
+- show identity in panel

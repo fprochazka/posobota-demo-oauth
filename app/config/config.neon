@@ -25,6 +25,10 @@ extensions:
 	facebook: Kdyby\Facebook\DI\FacebookExtension
 
 
+facebook:
+	graphVersion: v2.1
+
+
 services:
 	- App\RouterFactory
 	router: @App\RouterFactory::createRouter
