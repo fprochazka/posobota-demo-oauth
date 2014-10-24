@@ -24,6 +24,7 @@ nette:
 extensions:
 	facebook: Kdyby\Facebook\DI\FacebookExtension
 	github: Kdyby\Github\DI\GithubExtension
+	google: Kdyby\Google\DI\GoogleExtension
 
 
 facebook:
@@ -33,6 +34,10 @@ facebook:
 
 github:
 	permissions: [user:email]
+
+
+google:
+	returnUri: :Homepage:(do=googleLogin-response)
 
 
 services:

@@ -5,6 +5,7 @@ namespace App\Presenters;
 use Kdyby\Facebook as Fb;
 use Kdyby\Facebook\Facebook;
 use Kdyby\Github;
+use Kdyby\Google;
 use Nette;
 use Tracy\Debugger;
 
@@ -27,6 +28,12 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 	 * @inject
 	 */
 	public $github;
+
+	/**
+	 * @var \Kdyby\Google\Google
+	 * @inject
+	 */
+	public $google;
 
 
 
@@ -127,6 +134,59 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 				 */
 				Debugger::log($e, 'github');
 				$this->flashMessage("Sorry bro, github authentication failed hard.");
+			}
+
+			$this->redirect('this');
+		};
+
+		return $dialog;
+	}
+
+
+
+	/**
+	 * @return Google\Dialog\LoginDialog
+	 */
+	protected function createComponentGoogleLogin()
+	{
+		$dialog = new Google\Dialog\LoginDialog($this->google);
+
+		$dialog->onResponse[] = function (Google\Dialog\LoginDialog $dialog) {
+			$google = $dialog->getGoogle();
+
+			if (!$google->getUser()) {
+				$this->flashMessage("Sorry bro, google authentication failed.");
+
+				return;
+			}
+
+			/**
+			 * If we get here, it means that the user was recognized
+			 * and we can call the Google API
+			 */
+
+			try {
+				$me = $google->getProfile();
+
+				/**
+				 * Nette\Security\User accepts not only textual credentials,
+				 * but even an identity instance!
+				 */
+				$this->user->login(new \Nette\Security\Identity($me->getId(), [], (array) $me->toSimpleObject()));
+
+				/**
+				 * You can celebrate now! The user is authenticated :)
+				 */
+
+			} catch (\Exception $e) {
+				/**
+				 * You might wanna know what happened, so let's log the exception.
+				 *
+				 * Rendering entire bluescreen is kind of slow task,
+				 * so might wanna log only $e->getMessage(), it's up to you
+				 */
+				Debugger::log($e, 'google');
+				$this->flashMessage("Sorry bro, google authentication failed hard.");
 			}
 
 			$this->redirect('this');

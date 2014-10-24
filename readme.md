@@ -7,6 +7,7 @@ Create sandbox
 - delete all the crap
 
 
+
 ## Facebook
 
 - `composer require kdyby/facebook`
@@ -45,6 +46,7 @@ facebook:
 - show identity in panel
 
 
+
 ## Github
 
 - `composer require kdyby/github`
@@ -59,6 +61,7 @@ github:
 ```
 
 - [Create new app](https://github.com/settings/applications/new)
+- setup url
 - copy credentials to config
 
 ```yml
@@ -70,6 +73,54 @@ github:
 - copy [auth component usage from doc](https://github.com/Kdyby/Github/blob/master/docs/en/index.md#authentication)
 - delete not needed code
 - add button to template
+- click the button
+- profit
+- show api calls
+- show identity in panel
+
+
+
+## Google
+
+- `composer require kdyby/google`
+
+
+```js
+{
+	"require": {
+		"kdyby/google": "@stable",
+		"google/apiclient": "@beta"
+	}
+}
+```
+
+- register extension
+
+```yml
+extensions:
+	google: Kdyby\Github\DI\GithubExtension
+
+google:
+	permissions: [user:email]
+```
+
+- [Create new app](https://console.developers.google.com/project)
+- go to Apis & Auth > Credentials > Oauth > Create new Client ID
+- you have to use "valid domain" `http://oauth-demo.kdyby.org`
+- copy credentials to config
+
+```yml
+google:
+	appId: ""
+	appSecret: ""
+```
+
+- copy [auth component usage from doc](https://github.com/Kdyby/Google/blob/master/docs/en/index.md#authentication)
+- delete not needed code
+- add button to template
+- explain & setup `google.returnUri` to `:Homepage:(do=googleLogin-response)`
+- redirect [http://oauth-demo.kdyby.org](http://oauth-demo.kdyby.org) to localhost using `/etc/hosts`
+- fix google app allowed redirect url
 - click the button
 - profit
 - show api calls

@@ -251,16 +251,16 @@
         },
         {
             "name": "kdyby/google",
-            "version": "v0.1",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kdyby/Google.git",
-                "reference": "3ce06f7d0efaedc2fa37c7cf0a7dc517d716d72d"
+                "reference": "0ae9e97a8f64207201dcde3a0db3380d1b3c6e3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kdyby/Google/zipball/3ce06f7d0efaedc2fa37c7cf0a7dc517d716d72d",
-                "reference": "3ce06f7d0efaedc2fa37c7cf0a7dc517d716d72d",
+                "url": "https://api.github.com/repos/Kdyby/Google/zipball/0ae9e97a8f64207201dcde3a0db3380d1b3c6e3a",
+                "reference": "0ae9e97a8f64207201dcde3a0db3380d1b3c6e3a",
                 "shasum": ""
             },
             "require": {
@@ -270,13 +270,13 @@
                 "nette/nette": "~2.1@dev"
             },
             "require-dev": {
-                "jakub-onderka/php-parallel-lint": "~0.6",
+                "jakub-onderka/php-parallel-lint": "~0.7",
                 "nette/tester": "@dev"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "0.1-dev"
                 }
             },
             "autoload": {
@@ -300,7 +300,7 @@
                     "homepage": "http://filip-prochazka.com"
                 },
                 {
-                    "name": "Mikulas Dite",
+                    "name": "Mikuláš Dítě",
                     "email": "mikulas@dite.pro"
                 },
                 {
@@ -317,7 +317,7 @@
                 "login",
                 "nette"
             ],
-            "time": "2014-05-13 11:27:42"
+            "time": "2014-10-24 15:51:26"
         },
         {
             "name": "latte/latte",
