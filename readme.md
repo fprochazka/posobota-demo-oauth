@@ -99,9 +99,6 @@ github:
 ```yml
 extensions:
 	google: Kdyby\Github\DI\GithubExtension
-
-google:
-	permissions: [user:email]
 ```
 
 - [Create new app](https://console.developers.google.com/project)
@@ -118,7 +115,13 @@ google:
 - copy [auth component usage from doc](https://github.com/Kdyby/Google/blob/master/docs/en/index.md#authentication)
 - delete not needed code
 - add button to template
-- explain & setup `google.returnUri` to `:Homepage:(do=googleLogin-response)`
+- explain & setup `google.returnUri`
+
+```yml
+google:
+	returnUri: :Homepage:(do=googleLogin-response)
+```
+
 - redirect [http://oauth-demo.kdyby.org](http://oauth-demo.kdyby.org) to localhost using `/etc/hosts`
 - fix google app allowed redirect url
 - click the button
