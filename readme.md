@@ -22,7 +22,7 @@ facebook:
 	graphVersion: v2.1
 ```
 
-- [Create new app](https://developers.facebook.com/apps/494469227315105/test-apps/)
+- [Create new app](https://developers.facebook.com/apps/)
 - copy credentials to config
 
 
